@@ -5,8 +5,10 @@ export class Welcome extends React.Component {
     render() {
         return (
             <div>
-                <p>Welcome, {this.props.name ?? 'friend'}!</p>
-                <Age age={64}/>
+                {this.props.name === 'John' &&
+                    <p>Welcome, {this.props.name}!</p>
+                }
+                <Age age={60}/>
             </div>
         )
     }
