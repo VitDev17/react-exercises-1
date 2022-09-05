@@ -7,8 +7,7 @@ export class CounterDisplay extends React.Component {
     state = {
         count : this.props.initialValue,
     }
-    constructor(props) {
-        super (props)
+    componentDidMount() {
         setInterval(() => 
             {this.setState((state) => {
                 return {count: state.count + this.props.incrementInterval}
@@ -16,3 +15,7 @@ export class CounterDisplay extends React.Component {
          }, this.props.incrementAmount)
     }
 }
+//Non serve il costruttore se utilizzo il metodo
+//componentDidMount per inizializzare ad esempio
+//lo stato, ma il costruttore viene chiamato
+//coumque ogni volta che istanzio una classe 
