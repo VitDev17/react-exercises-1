@@ -5,14 +5,15 @@ export class Counter extends React.Component {
         return <h1>Count: {this.state.count}</h1>
     }
     state = {
-        count : 0,
+        count : this.props.value,
     }
     constructor(props) {
         super (props)
-        setInterval(() => {this.setState((state) => {
-            return {count: state.count + 1}
-        })
-        }, 1000)
+        setInterval(() => 
+            {this.setState((state) => {
+                return {count: state.count + this.props.interval}
+                })
+         }, this.props.amount)
     }
 }
 
